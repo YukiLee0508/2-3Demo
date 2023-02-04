@@ -1,0 +1,19 @@
+{
+    "userDom": {
+      "userInfoDom": {
+        "id": "user_info"
+      },
+      "userNameInput": {
+        "id": "user_name"
+      },
+      "userAgeInput": {
+        "id": "user_age"
+      },
+      "userIncomeInput": {
+        "id": "user_income"
+      },
+      "userInfoSubmit":{
+        "id":"user_submit"
+      }
+    }
+  }

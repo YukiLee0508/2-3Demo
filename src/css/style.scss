@@ -1,1 +1,33 @@
+
+@use "center.scss" as center;
 @import "normalize.css";
+
+:root {
+  font-size: 10px;
+}
+
+html,
+body {
+  @include center.flexCenter;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  @include center.flexCenter;
+  width: 100%;
+  height: 100%;
+}
+
+#user_info {
+  @include center.flexCenter;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  border: 0.1rem solid black;
+}
+#user_submit{
+    width: 100%;
+    align-items: center;
+    margin: 1rem 0 0.5rem 0;
+}
