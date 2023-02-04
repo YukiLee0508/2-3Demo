@@ -1,19 +1,28 @@
 {
-    "userDom": {
-      "userInfoDom": {
-        "id": "user_info"
-      },
-      "userNameInput": {
-        "id": "user_name"
-      },
-      "userAgeInput": {
-        "id": "user_age"
-      },
-      "userIncomeInput": {
-        "id": "user_income"
-      },
-      "userInfoSubmit":{
-        "id":"user_submit"
-      }
+  "userDom": {
+    "userInfoDom": {
+      "id": "user_info"
+    },
+    "userNameInput": {
+      "id": "user_name"
+    },
+    "userNameLabel": {
+      "textContent": "Name:"
+    },
+    "userAgeInput": {
+      "id": "user_age"
+    },
+    "userAgeLabel": {
+      "textContent": "Age:"
+    },
+    "userIncomeInput": {
+      "id": "user_Income"
+    },
+    "userIncomeLabel": {
+      "textContent": "Income:"
+    },
+    "userInfoSubmit": {
+      "id": "user_submit"
     }
   }
+}

@@ -1,34 +1,38 @@
 import { isNumber, isString, last } from "lodash";
-// // 构造函数
+
+//包装类型  构造函数  function只能返回 object
 // export function UserInfoStructure() {
 
-//     this.name = 'Yuki',
-//         this.age = 18,
-//         this.income = 10000,
-//         this.eat = function () {
+//     this.name = undefined
+//     this.age = undefined
+//     this.income = undefined
+//     this.eat = function () {
 //             console.log('eat');
 //         }
 // }
 
+// 塑形创造
 // export class User {
-//     //构造函数
-//     #name = undefined
-//     #age = undefined
-//     #income = undefined
+    //构造函数
 
-//     constructor(name, age, income) {
-//         this.#name = name
-//         this.#age = age
-//         this.#income = income
-//     }
+    //私有化 内部调用
+    // #name = undefined
+    // #age = undefined
+    // #income = undefined
+    // constructor(name, age, income) {
+    //     this.#name = name
+    //     this.#age = age
+    //     this.#income = income
+    // }
+
+    // get name(){
+    //     return this.#name
+    // }
+    // set name(name){
+    //      this.#name = name
+    // }
 // }
 
-// get name(){
-//     return this.#name
-// }
-// set name(name){
-//      this.#name = name
-// }
 
 // const user = {
 
@@ -37,25 +41,24 @@ import { isNumber, isString, last } from "lodash";
 // user.name = "yuki"
 
 
-// // 构造函数
+// 构造函数
 // const user2 = new UserInfoStructure()
-// user.age = 10
-// user.name = "yuki"
+// user2.age = 10
+// user2.name = "yuki"
 
-// // class
-// const user3 = new User('yuki',18,0)
+// class
+// const user3 = new User("yuki",18,0)
 
 // console.log("user3:",user3);
 
-// // user3.name = "Dannie"
+// user3.name = "Dannie"
+
 // console.log("user3:",user3);
 
 // console.log(user3.name);
 
 
-
 export function UserInfoStructure() {
-
     this.name = undefined
     this.age = undefined
     this.income = undefined
@@ -70,7 +73,6 @@ export class User {
       this.#age = userInfo.age
       this.#income = userInfo.income
     }
-
   
     get name() {
       return this.#name
