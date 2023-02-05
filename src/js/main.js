@@ -6,19 +6,16 @@ import '@/css/style.scss'
 
 import { isString, isNumber } from '@/js/utils'
 
-import { userInfoDom } from '@/js/userDom'
+import { userInfoDom  } from '@/js/userDom'
+import {tableInfoDom} from '@/js/tableDom'
 
-import { UserInfoStructure, User } from './user'
+// import { UserInfoStructure, User } from './user'
 
-// import '@/js/sort'
+import '@/js/sort'
 
 const app = document.getElementById('app')
-
 app.appendChild(userInfoDom)
 
-const user = new UserInfoStructure()
+const user = document.getElementById('user')
+user.appendChild(tableInfoDom)
 
-const user2 = new User()
-
-console.log(user);
-console.log(user2);

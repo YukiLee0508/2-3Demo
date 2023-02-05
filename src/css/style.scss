@@ -1,5 +1,4 @@
-
-@use "center.scss" as center;
+@use "center.scss"as center;
 @import "normalize.css";
 
 :root {
@@ -11,23 +10,136 @@ body {
   @include center.flexCenter;
   width: 100vw;
   height: 100vh;
+  
 }
 
 #app {
   @include center.flexCenter;
   width: 100%;
   height: 100%;
+  display: flex;
+  position: absolute;
 }
 
 #user_info {
   @include center.flexCenter;
   align-items: flex-start;
   flex-direction: column;
-  padding: 1rem;
-  border: 0.1rem solid black;
+  position: relative;
+  left: -15rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid black;
+  z-index: 999;
+
+  :nth-child(5) {
+    position: absolute;
+    left: 13.5rem;
+    bottom: 6.5rem;
+  }
 }
-#user_submit{
-    width: 100%;
-    align-self: center;
-    margin: 1rem 0 0.5rem 0;
+
+div input {
+  border: none;
+  border-radius: 4px;
+  height: 1.5rem;
+}
+
+#user_submit {
+  width: 100%;
+  align-self: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
+#userInfo {
+  @include center.flexCenter;
+  position: relative;
+  width: 50rem;
+  height: 20rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  background-color:#A6E3E9;
+}
+
+#table {
+  @include center.flexCenter;
+  width: 50%;
+  height: 100%;
+
+}
+
+#header {
+  @include center.flexCenter;
+  display: block;
+  position: absolute;
+  position: relative;
+  display: flex;
+  height: 15rem;
+  right:2rem;
+  border-radius: 5px;
+
+
+  #name_Cell,
+  #age_Cell,
+  #income_Cell {
+    @include center.flexCenter;
+    display: flex;
+    flex-direction:column-reverse;
+    align-items: flex-start;
+    position: absolute;
+    width: 8rem;
+    top: 3rem;
+    height: 13rem;
+    border-radius: 5px;
+    font-size: 2rem;
+    background-color:#CBF1F5;
+  }
+
+  #name_Cell {
+    left: -3.3rem;
+    @include center.flexCenter;
+    border: 1px solid black;
+  }
+
+  #age_Cell {
+    left: 7rem;
+    @include center.flexCenter;
+    border: 1px solid black;
+  }
+
+  #income_Cell {
+    left: 17rem;
+    @include center.flexCenter;
+    border: 1px solid black;
+  }
+
+
+  #name_info,
+  #age_info,
+  #income_info {
+    display: block;
+    position: absolute;
+    display: flex;
+    bottom: 13rem;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    border: 1px solid black;
+    background-color: #71C9CE;
+    z-index: 99;
+  }
+
+  #name_info {
+    right:-5rem;
+  }
+  #age_info {
+    left: 7rem;
+    padding: 0.5rem 2.5rem;
+  }
+
+  #income_info {
+    padding: 0.5rem 1.5rem;
+    left: 17rem;
+  }
+
 }

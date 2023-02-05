@@ -1,7 +1,9 @@
 import { userDom } from "@/data/db.json"
 // console.log(userDom);
 
+
 //外围框
+
 export const userInfoDom = document.createElement('div')
 
 export const userNameLabel = document.createElement('label')
@@ -9,6 +11,7 @@ export const userNameInput = document.createElement('input')
 
 export const userAgeLabel = document.createElement('label')
 export const userAgeInput = document.createElement('input')
+export const userAge = document.createElement('p')
 
 export const userIncomeLabel = document.createElement('label')
 export const userIncomeInput = document.createElement('input')
@@ -39,11 +42,14 @@ export const userInfoSubmit = document.createElement('button')
 
     //age
     userAgeInput.id = userDom.userAgeInput.id
+    userAge.id = "value"
     userAgeInput.type='range'
     userAgeLabel.htmlFor = userAgeInput.id
     userAgeLabel.textContent = userDom.userAgeLabel.textContent
+    userAge.textContent = "50"
     userInfoDom.appendChild(userAgeLabel)
     userInfoDom.appendChild(userAgeInput)
+    userInfoDom.appendChild(userAge)
 
     //income
     userIncomeInput.id = userDom.userIncomeInput.id
@@ -62,3 +68,7 @@ export const userInfoSubmit = document.createElement('button')
 
 // }
 // init()
+
+
+
+

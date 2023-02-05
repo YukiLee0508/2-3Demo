@@ -3,6 +3,9 @@
     "userInfoDom": {
       "id": "user_info"
     },
+    "userAgeDom": {
+      "id": "age_info"
+    },
     "userNameInput": {
       "id": "user_name"
     },
@@ -24,5 +27,41 @@
     "userInfoSubmit": {
       "id": "user_submit"
     }
-  }
+  },
+  "tableDom": {
+      "tableInfoDom": {
+        "id": "userInfo"
+      },
+      "headerDom": {
+        "id": "header_info"
+      },
+      "table":{
+        "id":"table"
+      },
+      "table_info":{
+        "id":"table_info"
+      },
+      "header":{
+        "id":"header"
+      },
+      "nameInfo":{
+        "id":"name_info"
+      },
+      "ageInfo":{
+        "id":"age_info"
+      },
+      "incomeInfo":{
+        "id":"income_info"
+      },
+      "nameCell":{
+        "id":"name_Cell"
+      },
+      "ageCell":{
+        "id":"age_Cell"
+      },
+      "incomeCell":{
+        "id":"income_Cell"
+      }
+    }
+ 
 }
