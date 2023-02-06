@@ -2,7 +2,7 @@
 @import "normalize.css";
 
 :root {
-  font-size: 10px;
+  font-size: 25px;
 }
 
 html,
@@ -39,7 +39,7 @@ body {
   @include center.flexCenter;
   align-items: flex-start;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   padding: 1.5rem 3rem 1.5rem 2rem;
   right: 15rem;
   border: 1px solid #9e9c9c;
@@ -49,7 +49,7 @@ body {
   :nth-child(5) {
     position: absolute;
     left: 15.5rem;
-    bottom: 8rem;
+    bottom: 6.5rem;
 
   }
 }
@@ -103,7 +103,6 @@ div input {
     padding-bottom: 12px;
     background-color: #06AA6D;
     color: white;
-    font-size: 15px;
   }
 
 }
