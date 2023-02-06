@@ -18,4 +18,3 @@ app.appendChild(userInfoDom)
 
 const user = document.getElementById('user')
 user.appendChild(tableInfoDom)
-

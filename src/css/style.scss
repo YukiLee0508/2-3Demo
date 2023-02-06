@@ -10,7 +10,7 @@ body {
   @include center.flexCenter;
   width: 100vw;
   height: 100vh;
-  
+
 }
 
 #app {
@@ -59,87 +59,95 @@ div input {
   border-radius: 5px;
   font-size: 1.5rem;
   border: 1px solid black;
-  background-color:#A6E3E9;
+  background-color: #A6E3E9;
 }
 
 #table {
   @include center.flexCenter;
-  width: 50%;
+  width: 100%;
   height: 100%;
+  position: relative;
 
 }
 
 #header {
   @include center.flexCenter;
   display: block;
-  position: absolute;
   position: relative;
+  position: absolute;
   display: flex;
-  height: 15rem;
-  right:2rem;
-  border-radius: 5px;
-
-
-  #name_Cell,
-  #age_Cell,
-  #income_Cell {
-    @include center.flexCenter;
-    display: flex;
-    flex-direction:column-reverse;
-    align-items: flex-start;
-    position: absolute;
-    width: 8rem;
-    top: 3rem;
-    height: 13rem;
-    border-radius: 5px;
-    font-size: 2rem;
-    background-color:#CBF1F5;
-  }
-
-  #name_Cell {
-    left: -3.3rem;
-    @include center.flexCenter;
-    border: 1px solid black;
-  }
-
-  #age_Cell {
-    left: 7rem;
-    @include center.flexCenter;
-    border: 1px solid black;
-  }
-
-  #income_Cell {
-    left: 17rem;
-    @include center.flexCenter;
-    border: 1px solid black;
-  }
-
+  width: 30rem;
+  height: 20rem;
+  right: 1rem;
 
   #name_info,
   #age_info,
   #income_info {
     display: block;
-    position: absolute;
+    position: relative;
     display: flex;
-    bottom: 13rem;
+    bottom: 15rem;
     border-radius: 5px;
-    padding: 0.5rem 2rem;
     border: 1px solid black;
     background-color: #71C9CE;
     z-index: 99;
   }
 
   #name_info {
-    right:-5rem;
+    position: absolute;
+    padding: 0.5rem 2rem;
+    right:20rem;
   }
+
   #age_info {
-    left: 7rem;
-    padding: 0.5rem 2.5rem;
+    position: absolute;
+    padding: 0.5rem 2rem;
+    left: 12rem;
   }
 
   #income_info {
-    padding: 0.5rem 1.5rem;
-    left: 17rem;
+    right: 1rem;
+    position: absolute;
+    padding: 0.5rem 1rem;
+  }
+
+  #name_Cell,
+  #age_Cell,
+  #income_Cell {
+    @include center.flexCenter;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    position: relative;
+    width: 27rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color:#CBF1F5;
+
+  }
+
+  #name_Cell {
+    position: absolute;
+    bottom: 10rem;
+    left: 1.6rem;
+    @include center.flexCenter;
+    border: 1px solid black;
+  }
+
+  #age_Cell {
+    position: absolute;
+    top: 10.8rem;
+    right: 1rem;
+    @include center.flexCenter;
+    border: 1px solid black;
+  }
+
+  #income_Cell {
+    position: absolute;
+    top: 15rem;
+    left:1.5rem;
+    @include center.flexCenter;
+    border: 1px solid black;
   }
 
 }

@@ -29,6 +29,9 @@ const userInfoList = [
   //   income: 30000
   // }
 ]
+function sort(attr) {
+  return userInfoList.sort(sortBy(...attr))
+}
 
 //submit 点击事件
 userDom.userInfoSubmit.addEventListener('click', () => {
@@ -44,14 +47,10 @@ userDom.userInfoSubmit.addEventListener('click', () => {
   if (user instanceof User) {
     //正确
     userInfoList.push({ ...userInfo })
-    userInfo.textContent = sort(["age", "name", "income"])
+    userInfo.textContent = sort(["name","age", "income"])
     // console.log(userInfoList);
   }
 })
-
-function sort(attr) {
-  return userInfoList.sort(sortBy(...attr))
-}
 
 tableDom.nameInfo.addEventListener('click', () => {
   userInfoList.textContent = sort((["name", "age", "income"]))
@@ -62,9 +61,13 @@ tableDom.nameInfo.addEventListener('click', () => {
     let row = document.createElement('tr');
 
     let nameCell = document.createElement('th')
+    // let ageCell = document.createElement('th')
+    // let incomeCell = document.createElement('th')
+
     nameCell.id = tableDom.nameCell.id
 
-    nameCell.innerHTML = user.name+  '<br>' + '| '+'<br>' +user.age + '<br>' + '| '+'<br>' + user.income
+    nameCell.innerHTML = user.name+ '&nbsp'+ user.age +'&nbsp' + user.income
+
     row.appendChild(nameCell)
 
     header.appendChild(row)
@@ -82,7 +85,7 @@ tableDom.ageInfo.addEventListener('click', () => {
     let ageCell = document.createElement('th')
     ageCell.id = tableDom.ageCell.id
 
-    ageCell.innerHTML = user.age +  '<br>' + '|'+'<br>' + user.name +  '<br>' + '|'+'<br>' +user.income
+    ageCell.innerHTML = user.age+'&nbsp' + user.name+ '&nbsp'+user.income
 
     row.appendChild(ageCell)
 
@@ -100,10 +103,11 @@ tableDom.incomeInfo.addEventListener('click', () => {
     let incomeCell = document.createElement('th')
     incomeCell.id = tableDom.incomeCell.id
 
-    incomeCell.innerHTML = user.income+ '<br>' + '| '+'<br>' +user.name+  '<br>' + '| '+'<br>' +user.age
+    incomeCell.innerHTML = user.income+'&nbsp'+user.name+'&nbsp'+user.age
 
     row.appendChild(incomeCell)
 
     header.appendChild(row)
   });
 });
+
