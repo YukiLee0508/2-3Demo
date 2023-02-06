@@ -88,8 +88,8 @@ tableDom.ageInfo.addEventListener('click', () => {
 
     ageCell.id = tableDom.ageCell.id
 
-    ageCell.innerHTML = user.age+'&nbsp' + user.name+ '&nbsp'+user.income
-
+    // ageCell.innerHTML = user.age+'&nbsp' + user.name+ '&nbsp'+user.income
+    ageCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
     row.appendChild(ageCell)
 
     header.appendChild(row)
@@ -107,8 +107,8 @@ tableDom.incomeInfo.addEventListener('click', () => {
 
     incomeCell.id = tableDom.incomeCell.id
 
-    incomeCell.innerHTML = user.income+'&nbsp'+user.name+'&nbsp'+user.age
-
+    // incomeCell.innerHTML = user.income+'&nbsp'+user.name+'&nbsp'+user.age
+    incomeCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
     row.appendChild(incomeCell)
 
     header.appendChild(row)
