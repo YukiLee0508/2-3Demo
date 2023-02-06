@@ -39,7 +39,7 @@ body {
   @include center.flexCenter;
   align-items: flex-start;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   padding: 1.5rem 3rem 1.5rem 2rem;
   right: 15rem;
   border: 1px solid #9e9c9c;
