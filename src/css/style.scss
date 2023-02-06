@@ -10,6 +10,7 @@ body {
   @include center.flexCenter;
   width: 100vw;
   height: 100vh;
+  font-family: Arial, Helvetica, sans-serif
 
 }
 
@@ -17,8 +18,21 @@ body {
   @include center.flexCenter;
   width: 100%;
   height: 100%;
-  display: flex;
   position: absolute;
+
+  input[type=text] {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  input[type=text]:focus {
+    border: 1px solid #555;
+  }
 }
 
 #user_info {
@@ -26,16 +40,17 @@ body {
   align-items: flex-start;
   flex-direction: column;
   position: relative;
-  left: -15rem;
-  padding: 1.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid black;
-  z-index: 999;
+  padding: 1.5rem 3rem 1.5rem 2rem;
+  right: 15rem;
+  border: 1px solid #9e9c9c;
+  z-index: 9999;
+  border-radius: 5px;
 
   :nth-child(5) {
     position: absolute;
-    left: 13.5rem;
-    bottom: 6.5rem;
+    left: 14.5rem;
+    bottom: 7.5rem;
+
   }
 }
 
@@ -49,108 +64,47 @@ div input {
   width: 100%;
   align-self: center;
   margin: 1rem 0 0.5rem 0;
-  cursor:pointer;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 
-
-#userInfo {
-  @include center.flexCenter;
-  position: relative;
+#tableDiv {
   width: 50rem;
   height: 20rem;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  border: 1px solid black;
-  background-color: #A6E3E9;
-}
-
-#table {
-  @include center.flexCenter;
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-}
-
-#header {
-  @include center.flexCenter;
-  display: block;
-  position: relative;
   position: absolute;
-  display: flex;
-  width: 30rem;
-  height: 20rem;
-  right: 1rem;
+  border-radius: 5px;
 
-  #name_info,
-  #age_info,
-  #income_info {
-    display: block;
-    position: relative;
-    display: flex;
-    bottom: 15rem;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-color: #71C9CE;
-    z-index: 99;
-  }
-
-  #name_info {
+  #table_header {
+    border-collapse: collapse;
     position: absolute;
-    padding: 0.5rem 2rem;
-    right:20rem;
+    width: 30rem;
+    height: 10rem;
+    left: 20rem;
+    top: 2rem;
   }
 
-  #age_info {
-    position: absolute;
-    padding: 0.5rem 2rem;
-    left: 12rem;
+  #table_header td,
+  #table_header th {
+    border: 1px solid #f9f6f6;
+    padding: 7px;
   }
 
-  #income_info {
-    right: 1rem;
-    position: absolute;
-    padding: 0.5rem 1rem;
+  #table_header tr:nth-child(even) {
+    background-color: #f2f2f2;
   }
 
-  #name_Cell,
-  #age_Cell,
-  #income_Cell {
-    @include center.flexCenter;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    position: relative;
-    width: 27rem;
-    height: 3rem;
-    border-radius: 5px;
-    background-color:#CBF1F5;
-
+  #table_header tr:hover {
+    background-color: #ddd;
   }
 
-  #name_Cell {
-    position: absolute;
-    bottom: 10rem;
-    left: 1.6rem;
-    @include center.flexCenter;
-    border: 1px solid black;
-  }
-
-  #age_Cell {
-    position: absolute;
-    top: 10.8rem;
-    right: 1rem;
-    @include center.flexCenter;
-    border: 1px solid black;
-  }
-
-  #income_Cell {
-    position: absolute;
-    top: 15rem;
-    left:1.5rem;
-    @include center.flexCenter;
-    border: 1px solid black;
+  #table_header th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #06AA6D;
+    color: white;
+    font-size: 15px;
   }
 
 }
+

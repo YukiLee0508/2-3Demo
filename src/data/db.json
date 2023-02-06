@@ -32,11 +32,14 @@
       "tableInfoDom": {
         "id": "userInfo"
       },
-      "headerDom": {
-        "id": "header_info"
+      "tableDiv": {
+        "id": "tableDiv"
       },
       "table":{
-        "id":"table"
+        "id":"table_header"
+      },
+      "headerDom": {
+        "id": "header_info"
       },
       "table_info":{
         "id":"table_info"

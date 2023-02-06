@@ -1,5 +1,7 @@
 import * as userDom from "@/js/userDom"
 import * as tableDom from "@/js/tableDom"
+import { tableDiv, table } from '@/js/tableDom'
+
 // console.log(tableDom);
 import { UserInfoStructure, User, createUser, } from "./user.js"
 import sortBy from 'sort-by';
@@ -12,7 +14,7 @@ userDom.userAgeInput.addEventListener("input", () => {
 
 })
 
-const userInfoList = [
+export const userInfoList = [
   {
     name: "Amy",
     age: 28,
@@ -33,7 +35,7 @@ function sort(attr) {
   return userInfoList.sort(sortBy(...attr))
 }
 
-//submit 点击事件
+// 提交数据
 userDom.userInfoSubmit.addEventListener('click', () => {
 
   const userInfo = new UserInfoStructure()
@@ -47,71 +49,67 @@ userDom.userInfoSubmit.addEventListener('click', () => {
   if (user instanceof User) {
     //正确
     userInfoList.push({ ...userInfo })
-    userInfo.textContent = sort(["name","age", "income"])
+    let row = document.createElement('tr')
+    let nameCell = document.createElement('td')
+    let ageCell = document.createElement('td')
+    let incomeCell = document.createElement('td')
+    nameCell.innerHTML = user.name
+    ageCell.innerHTML = user.age
+    incomeCell.innerHTML = user.income
+    row.appendChild(nameCell)
+    row.appendChild(ageCell)
+    row.appendChild(incomeCell)
+    table.appendChild(row)
+    // userInfo.textContent = sort(["name","age", "income"])
     // console.log(userInfoList);
   }
 })
 
+// 按 Name 排序
 tableDom.nameInfo.addEventListener('click', () => {
-
-  userInfoList.textContent = sort((["name", "age", "income"]))
-
-  // console.log(userInfoList);
-
-  userInfoList.forEach((user) => {
-  
-    let row = document.createElement('tr');
-
-    let nameCell = document.createElement('th')
-    // let ageCell = document.createElement('th')
-    // let incomeCell = document.createElement('th')
-
-    nameCell.id = tableDom.nameCell.id
-
-    nameCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
- 
-    row.appendChild(nameCell)
-
-    header.appendChild(row)
-  });
+  fillTable(userInfoList, ["name", "age", "income"])
 
 });
 
 tableDom.ageInfo.addEventListener('click', () => {
-  userInfoList.textContent = sort((["age", "name", "income"]))
+  fillTable(userInfoList, ["age", "name", "income"])
 
-  userInfoList.forEach((user) => {
-    // 创建新一行 html 结构
-    let row = document.createElement('tr');
-
-    let ageCell = document.createElement('th')
-
-    ageCell.id = tableDom.ageCell.id
-
-    // ageCell.innerHTML = user.age+'&nbsp' + user.name+ '&nbsp'+user.income
-    ageCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
-    row.appendChild(ageCell)
-
-    header.appendChild(row)
-  });
 });
 
 tableDom.incomeInfo.addEventListener('click', () => {
-  userInfoList.textContent = sort((["income", "name", "age"]))
+  fillTable(userInfoList, ["income", "name", "age"])
 
-  userInfoList.forEach((user) => {
-
-    let row = document.createElement('tr');
-
-    let incomeCell = document.createElement('th')
-
-    incomeCell.id = tableDom.incomeCell.id
-
-    // incomeCell.innerHTML = user.income+'&nbsp'+user.name+'&nbsp'+user.age
-    incomeCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
-    row.appendChild(incomeCell)
-
-    header.appendChild(row)
-  });
 });
 
+
+
+export function fillTable(userInfoList, sortRule) {
+  // 排序
+  userInfoList.textContent = sort((sortRule))
+
+  let rowsToRemove = []
+  for (let index = 0; index < table.rows.length; index++) {
+    // console.log(index, table.rows.length);
+    const element = table.rows[index];
+    if (element.id != "header") {
+      rowsToRemove.push(element)
+    }
+  }
+  rowsToRemove.forEach((row) => {
+    row.remove()
+  })
+
+  userInfoList.forEach((user) => {
+    let row = document.createElement('tr')
+    let nameCell = document.createElement('td')
+    let ageCell = document.createElement('td')
+    let incomeCell = document.createElement('td')
+    nameCell.innerHTML = user.name
+    ageCell.innerHTML = user.age
+    incomeCell.innerHTML = user.income
+    row.appendChild(nameCell)
+    row.appendChild(ageCell)
+    row.appendChild(incomeCell)
+    table.appendChild(row)
+  });
+}
