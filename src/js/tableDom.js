@@ -27,14 +27,14 @@ export const incomeInfo = document.createElement('th');
 incomeInfo.id = tableDom.incomeInfo.id
 incomeInfo.innerHTML = "Income:";
 
-// export const nameCell = document.createElement('th')
-// nameCell.id = tableDom.nameCell.id
+export const nameCell = document.createElement('th')
+nameCell.id = tableDom.nameCell.id
 
-// export const ageCell = document.createElement('th')
-// ageCell.id = tableDom.ageCell.id
+export const ageCell = document.createElement('th')
+ageCell.id = tableDom.ageCell.id
 
-// export const incomeCell = document.createElement('th')
-// incomeCell.id = tableDom.incomeCell.id
+export const incomeCell = document.createElement('th')
+incomeCell.id = tableDom.incomeCell.id
 
 header.appendChild(nameInfo);
 header.appendChild(ageInfo);

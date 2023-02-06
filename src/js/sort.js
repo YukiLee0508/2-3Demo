@@ -13,21 +13,21 @@ userDom.userAgeInput.addEventListener("input", () => {
 })
 
 const userInfoList = [
-  // {
-  //   name: "Amy",
-  //   age: 28,
-  //   income: 20000
-  // },
-  // {
-  //   name: "Vincent",
-  //   age: 25,
-  //   income: 10000
-  // },
-  // {
-  //   name: "Peter",
-  //   age: 22,
-  //   income: 30000
-  // }
+  {
+    name: "Amy",
+    age: 28,
+    income: 20000
+  },
+  {
+    name: "Vincent",
+    age: 25,
+    income: 10000
+  },
+  {
+    name: "Peter",
+    age: 22,
+    income: 30000
+  }
 ]
 function sort(attr) {
   return userInfoList.sort(sortBy(...attr))
@@ -53,11 +53,13 @@ userDom.userInfoSubmit.addEventListener('click', () => {
 })
 
 tableDom.nameInfo.addEventListener('click', () => {
+
   userInfoList.textContent = sort((["name", "age", "income"]))
-  console.log(userInfoList);
+
+  // console.log(userInfoList);
 
   userInfoList.forEach((user) => {
-    // 创建新一行 html 结构
+  
     let row = document.createElement('tr');
 
     let nameCell = document.createElement('th')
@@ -66,8 +68,8 @@ tableDom.nameInfo.addEventListener('click', () => {
 
     nameCell.id = tableDom.nameCell.id
 
-    nameCell.innerHTML = user.name+ '&nbsp'+ user.age +'&nbsp' + user.income
-
+    nameCell.innerHTML = user.name +'&nbsp' + user.age+ '&nbsp'+ user.income
+ 
     row.appendChild(nameCell)
 
     header.appendChild(row)
@@ -83,6 +85,7 @@ tableDom.ageInfo.addEventListener('click', () => {
     let row = document.createElement('tr');
 
     let ageCell = document.createElement('th')
+
     ageCell.id = tableDom.ageCell.id
 
     ageCell.innerHTML = user.age+'&nbsp' + user.name+ '&nbsp'+user.income
@@ -101,6 +104,7 @@ tableDom.incomeInfo.addEventListener('click', () => {
     let row = document.createElement('tr');
 
     let incomeCell = document.createElement('th')
+
     incomeCell.id = tableDom.incomeCell.id
 
     incomeCell.innerHTML = user.income+'&nbsp'+user.name+'&nbsp'+user.age
