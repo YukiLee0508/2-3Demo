@@ -19,6 +19,11 @@ export const userInfoList = [
   {
     name: "Amy",
     age: 28,
+    income: 20001
+  },
+  {
+    name: "Amy",
+    age: 23,
     income: 20000
   },
   {
@@ -68,21 +73,21 @@ userDom.userInfoSubmit.addEventListener('click', () => {
 
 // 点击 name的事件 按 Name 排序
 tableDom.nameInfo.addEventListener('click', () => {
-  fillTable(userInfoList, ["name", "age", "income"])
+  // fillTable(userInfoList, ["name", "age", "income"])
   selectHeader(tableDom.nameInfo)
 
 });
 
 tableDom.ageInfo.addEventListener('click', () => {
   // 给表格数据排序
-  fillTable(userInfoList, ["age", "name", "income"])
+  // fillTable(userInfoList, ["age", "name", "income"])
   selectHeader(tableDom.ageInfo)
 });
 
 
 
 tableDom.incomeInfo.addEventListener('click', () => {
-  fillTable(userInfoList, ["income", "name", "Income"])
+  // fillTable(userInfoList, ["income", "name", "Income"])
 
   selectHeader(tableDom.incomeInfo)
 });
@@ -135,6 +140,12 @@ function selectHeader(header) {
     }
   })
 
+  let idMap = {
+    'name_info': 'name',
+    'age_info': 'age',
+    'income_info': 'income',
+  }
+
   // 是否执行排序, 默认情况要排序
   if (selectedCount == 0) {
     // 第一种情况, 没选中任何表头
@@ -143,6 +154,9 @@ function selectHeader(header) {
     // 添加属性 - 是否选中当前表头
     header.setAttribute('is_selected', true)
     header.setAttribute('select_order', 1)
+
+    // 排序
+    fillTable(userInfoList, [idMap[header.id]])
     return
   } else {
     if (selectedThisHeader == true) {
@@ -168,6 +182,12 @@ function selectHeader(header) {
             header.setAttribute('is_selected', false)
             header.removeAttribute('select_order')
           }
+          allHeaders.forEach((h) => {
+            if (h.hasAttribute('is_selected') == true && h.getAttribute('is_selected') == 'true' && h.getAttribute('select_order') == 1) {
+              fillTable(userInfoList, [idMap[h.id]])
+              return
+            }
+          })
         }
       }
     } else {
@@ -177,6 +197,12 @@ function selectHeader(header) {
         // 添加属性 - 是否选中当前表头
         header.setAttribute('is_selected', true)
         header.setAttribute('select_order', 2)
+        allHeaders.forEach((h) => {
+          if (h.hasAttribute('is_selected') == true && h.getAttribute('is_selected') == 'true' && h.getAttribute('select_order') == 1) {
+            fillTable(userInfoList, [idMap[h.id], idMap[header.id]])
+            return
+          }
+        })
       } else {
         return
       }

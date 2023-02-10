@@ -1,0 +1,6 @@
+ services:
+    nginx:
+          image: iservant/vite_dome:0.0.2
+          restart: always
+          ports:
+            - "4567:80"

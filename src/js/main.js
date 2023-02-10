@@ -25,4 +25,4 @@ app.appendChild(tableDiv)
 
 
 
-fillTable(userInfoList, ["name", "age", "income"])
+fillTable(userInfoList, [])
