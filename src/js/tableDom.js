@@ -31,12 +31,40 @@ ageCell.id = tableDom.ageCell.id
 export const incomeCell = document.createElement('th')
 incomeCell.id = tableDom.incomeCell.id
 
+
+
+// export const colgroup = document.createElement('tr')
+// colgroup.id = tableDom.colgroup.id
+
+
+// export const nameMark = document.createElement('th')
+// nameMark.id = tableDom.nameMark.id
+// nameMark.innerHTML = "1"
+
+// export const ageMark = document.createElement('th')
+// ageMark.id = tableDom.ageMark.id
+// ageMark.innerHTML = "2"
+
+// export const incomeMark = document.createElement('th')
+// incomeMark.id = tableDom.incomeMark.id
+// incomeMark.innerHTML = "3"
+
+
 header.appendChild(nameInfo);
 header.appendChild(ageInfo);
 header.appendChild(incomeInfo);
 
+
+// header.appendChild(colgroup);
+
+
+// colgroup.appendChild(nameMark);
+// colgroup.appendChild(ageMark);
+// colgroup.appendChild(incomeMark);
+
 table.appendChild(header);
 tableDiv.appendChild(table);
+
 
 function createTableDiv(params) {
 

@@ -3,9 +3,6 @@
     "userInfoDom": {
       "id": "user_info"
     },
-    "userAgeDom": {
-      "id": "age_info"
-    },
     "userNameInput": {
       "id": "user_name"
     },
@@ -29,17 +26,11 @@
     }
   },
   "tableDom": {
-      "tableInfoDom": {
-        "id": "userInfo"
-      },
       "tableDiv": {
         "id": "tableDiv"
       },
       "table":{
         "id":"table_header"
-      },
-      "headerDom": {
-        "id": "header_info"
       },
       "table_info":{
         "id":"table_info"
@@ -64,6 +55,18 @@
       },
       "incomeCell":{
         "id":"income_Cell"
+      },
+      "colgroup":{
+        "id":"Mark"
+      },
+      "nameMark":{
+        "id":"name_Mark"
+      },
+      "ageMark":{
+        "id":"age_Mark"
+      },
+      "incomeMark":{
+        "id":"income_Mark"
       }
     }
  
